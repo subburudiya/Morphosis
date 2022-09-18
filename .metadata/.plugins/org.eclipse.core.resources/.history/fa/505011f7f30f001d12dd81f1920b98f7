@@ -1,0 +1,34 @@
+package com.string.programs;
+
+import java.util.Arrays;
+import java.util.List;
+
+public class DuplicateCharacters {
+
+	public static void main(String[] args) {
+
+		String s = "abcdabcdea";
+		char[] a = s.toCharArray();
+
+		String duplicate[]=new String[s.length()];
+	
+		for (int i = 0; i < a.length; i++) {
+			for (int j = i + 1; j < a.length; j++) {
+				if (a[i] == a[j]  && !Arrays.toString(duplicate).contains(a[i]+"")) {
+
+					 duplicate[i]= a[i]+"";
+
+				}
+
+			}
+
+		}
+		
+			List<String> list = Arrays.asList(duplicate);
+			list.removeAll(Arrays.asList("", " ", null));
+			System.out.print("Duplicate characters" + "  " + Arrays.toString(list));
+		
+
+	}
+
+}
